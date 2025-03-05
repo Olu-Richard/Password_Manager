@@ -136,14 +136,6 @@ A secure password manager web application designed to store and manage your pass
 - Integrate more web scraping features to fetch and display favicon images for websites.
 
 
-## Contributing
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Create a new Pull Request.
-
 ## Contact
 
 If you have any questions or suggestions, feel free to reach out:
