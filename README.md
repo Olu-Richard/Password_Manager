@@ -18,7 +18,7 @@ A secure password manager web application designed to store and manage your pass
 - **Backend**: PHP
 - **Database**: MySQL
 - **Session Management**: PHP Sessions
-- **Web Scraping**: PHP script to get website logos from URLs (optional)
+- **Web Scraping**: PHP script to get website logos from URLs 
   
 ## Installation
 
@@ -67,14 +67,14 @@ A secure password manager web application designed to store and manage your pass
      ```
 
 3. **Configure the database connection**:
-   - Edit the `includes/db.php` file with your database credentials:
+   - `includes/db.php` file with your database credentials:
 
      ```php
      <?php
-     $host = 'localhost'; // your database host
-     $db = 'password_manager'; // your database name
-     $user = 'root'; // your database username
-     $pass = ''; // your database password
+     $host = 'localhost';
+     $db = 'password_manager';
+     $user = 'root'; 
+     $pass = ''; 
 
      try {
          $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
@@ -98,6 +98,8 @@ A secure password manager web application designed to store and manage your pass
 ### 1. **Login**:
    - Go to the login page and enter your email and password to log in.
    - Once logged in, you will be redirected to the dashboard, where you can view and manage your saved passwords.
+     ![image](https://github.com/user-attachments/assets/7db7bfe8-b9ac-4b31-a2d1-9f57a387db5e)
+
 
 ### 2. **Add New Password**:
    - Click on "Add New Password" in the sidebar to save a new password.
