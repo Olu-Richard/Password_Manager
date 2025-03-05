@@ -100,19 +100,27 @@ A secure password manager web application designed to store and manage your pass
    - Once logged in, you will be redirected to the dashboard, where you can view and manage your saved passwords.
      ![image](https://github.com/user-attachments/assets/7db7bfe8-b9ac-4b31-a2d1-9f57a387db5e)
 
+### 2. **Register New User**:
+- After going to login page if you don't have an account you are given the option to sign up.
+![image](https://github.com/user-attachments/assets/bcb4854c-b5e8-41e0-9ba8-8a707f9f177a)
 
-### 2. **Add New Password**:
+### 3. **Add New Password**:
    - Click on "Add New Password" in the sidebar to save a new password.
    - Enter the website, username, and password.
+![image](https://github.com/user-attachments/assets/8fdefaa7-d64a-4ad7-b4fb-4822a6098497)
+![image](https://github.com/user-attachments/assets/f8a74cb4-5511-4d23-8a3c-8b88a6239037)
 
-### 3. **Edit Password**:
+### 4. **Edit Password**:
    - On the dashboard, click on the "Edit" button next to any saved password to modify the details.
 
-### 4. **Delete Password**:
+### 5. **Delete Password**:
    - To delete a password, click on the "Delete" button next to the password.
 
-### 5. **Logout**:
+### 6. **Logout**:
    - Click "Logout" in the sidebar to securely log out of your account.
+### 7. **Settings**:
+ - This page heps to update, delete and perform changes to the user account.
+![image](https://github.com/user-attachments/assets/03b8d643-2360-43ce-a3ba-2c061858edc8)
 
 ## Security Considerations
 
@@ -127,9 +135,6 @@ A secure password manager web application designed to store and manage your pass
 - Add the ability to categorize passwords for easier organization.
 - Integrate more web scraping features to fetch and display favicon images for websites.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
