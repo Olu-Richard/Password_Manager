@@ -148,8 +148,8 @@ A secure password manager web application designed to store and manage your pass
 
 If you have any questions or suggestions, feel free to reach out:
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **GitHub**: [https://github.com/your-username](https://github.com/your-username)
+- **Email**: [richardolummanuel51@gmail.com](mailto:richardolummanuel51@gmail.com)
+- **GitHub**: [[https://github.com/your-username](https://github.com/your-username)](https://github.com/Olu-Richard/Password_Manager/tree/main)
 
 ---
 
