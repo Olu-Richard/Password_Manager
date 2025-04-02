@@ -1,0 +1,2 @@
+@echo off
+"C:\xampp\mysql\bin\mysql" -u root password_manager -e "DROP TABLE IF EXISTS passwords; CREATE TABLE passwords (id INT PRIMARY KEY AUTO_INCREMENT, user_id INT NOT NULL, service VARCHAR(255) NOT NULL, username VARCHAR(255) NOT NULL, password TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);" 
