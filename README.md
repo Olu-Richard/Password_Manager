@@ -1,148 +1,148 @@
-
 # Password Manager
 
-A secure password manager web application designed to store and manage your passwords. The app is built with PHP, MySQL, and Bootstrap for a responsive user interface. It allows users to register, log in, view, add, edit, and delete passwords.
+A secure, modern, and user-friendly web-based password manager built with PHP and MySQL.
+
+![Password Manager Screenshot](screenshots/dashboard.png)
 
 ## Features
 
-- User registration and authentication
-- Add, view, edit, and delete passwords
-- Secure password storage in a MySQL database
-- Password management organized by website
-- User-friendly UI with a sidebar navigation
-- Website logos automatically fetched from the links
+- 🔐 Secure Password Storage
+  - Encrypted password storage
+  - Automatic password masking
+  - Copy passwords with one click
+  - Show/hide password toggle
 
-## Technologies Used
+- 🎨 Modern User Interface
+  - Clean, responsive design
+  - Collapsible sidebar navigation
+  - Website favicons display
+  - Bootstrap 5 styling
+  - Font Awesome icons
 
-- **Frontend**: HTML, CSS, Bootstrap 5
-- **Backend**: PHP
-- **Database**: MySQL
-- **Session Management**: PHP Sessions
-- **Web Scraping**: PHP script to get website logos from URLs 
-  
+- 👤 User Management
+  - User registration and authentication
+  - Profile settings management
+  - Change password functionality
+  - Account deletion option
+
+- ⚙️ Customization Options
+  - Dark mode support
+  - Auto-logout settings
+  - Two-factor authentication (coming soon)
+  - Biometric authentication (coming soon)
+
+## Requirements
+
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+- XAMPP/WAMP/MAMP or any PHP development environment
+- Modern web browser
+
 ## Installation
 
-### Prerequisites
-
-- PHP >= 7.4
-- MySQL or MariaDB
-- Apache or Nginx Web Server
-- Composer (Optional for dependency management)
-
-### Steps
-
-1. **Clone the repository**:
-   
+1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/password-manager.git
+   git clone https://github.com/yourusername/password-manager.git
    ```
 
-2. **Set up the database**:
-   
-   - Create a database in MySQL:
-   
-     ```sql
-     CREATE DATABASE password_manager;
-     ```
-   
-   - Import the database schema (you can use a SQL file with your tables) for the passwords table. Example:
+2. Move the project to your web server directory:
+   ```bash
+   mv password-manager /path/to/your/www/directory
+   ```
 
-     ```sql
-     CREATE TABLE passwords (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         user_id INT NOT NULL,
-         website VARCHAR(255) NOT NULL,
-         username VARCHAR(255),
-         password TEXT NOT NULL,
-         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-         FOREIGN KEY (user_id) REFERENCES users(id)
-     );
-     
-     CREATE TABLE users (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         email VARCHAR(255) UNIQUE NOT NULL,
-         password VARCHAR(255) NOT NULL,
-         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-     );
-     ```
+3. Create a new MySQL database:
+   ```sql
+   CREATE DATABASE password_manager;
+   ```
 
-3. **Configure the database connection**:
-   - `includes/db.php` file with your database credentials:
+4. Import the database structure:
+   ```bash
+   mysql -u root password_manager < database/structure.sql
+   ```
 
-     ```php
-     <?php
-     $host = 'localhost';
-     $db = 'password_manager';
-     $user = 'root'; 
-     $pass = ''; 
+5. Configure the database connection:
+   - Open `includes/db.php`
+   - Update the database credentials if needed
 
-     try {
-         $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-         // Set the PDO error mode to exception
-         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     } catch (PDOException $e) {
-         echo "Connection failed: " . $e->getMessage();
-     }
-     ?>
-     ```
+6. Set up your web server:
+   - Configure your web server to point to the project directory
+   - Ensure PHP has write permissions to necessary directories
 
-4. **Set up the web server**:
-   - For **Apache**, ensure `mod_rewrite` is enabled and the server points to the `public` folder as the root directory.
-   - For **Nginx**, ensure the server block is set correctly to serve PHP files.
+## Project Structure
 
-5. **Access the application**:
-   - Open the browser and go to `http://localhost/your-project-folder` to see the login page and begin using the application.
+```
+password-manager/
+├── api/                 # API endpoints
+├── config/             # Configuration files
+├── database/           # Database scripts
+├── includes/           # PHP includes
+│   └── db.php         # Database connection
+├── public/             # Public files
+│   ├── add_password.php
+│   ├── dashboard.php
+│   ├── edit_password.php
+│   ├── login.php
+│   ├── register.php
+│   └── settings.php
+├── assets/             # Static assets
+│   ├── css/
+│   ├── js/
+│   └── img/
+└── README.md          # This file
+```
 
-## Usage
+## Security Features
 
-### 1. **Login**:
-   - Go to the login page and enter your email and password to log in.
-   - Once logged in, you will be redirected to the dashboard, where you can view and manage your saved passwords.
-     ![image](https://github.com/user-attachments/assets/7db7bfe8-b9ac-4b31-a2d1-9f57a387db5e)
+- Password hashing using PHP's password_hash()
+- SQL injection prevention with prepared statements
+- XSS protection with htmlspecialchars()
+- CSRF protection
+- Secure session handling
+- Password masking in the UI
 
-### 2. **Register New User**:
-- After going to login page if you don't have an account you are given the option to sign up.
-![image](https://github.com/user-attachments/assets/bcb4854c-b5e8-41e0-9ba8-8a707f9f177a)
+## Browser Extension
 
-### 3. **Add New Password**:
-   - Click on "Add New Password" in the sidebar to save a new password.
-   - Enter the website, username, and password.
-![image](https://github.com/user-attachments/assets/8fdefaa7-d64a-4ad7-b4fb-4822a6098497)
-![image](https://github.com/user-attachments/assets/f8a74cb4-5511-4d23-8a3c-8b88a6239037)
+A companion browser extension is available for:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
 
-### 4. **Edit Password**:
-   - On the dashboard, click on the "Edit" button next to any saved password to modify the details.
+Features include:
+- Auto-fill credentials
+- Save new passwords
+- Update existing passwords
+- Quick access to stored passwords
 
-### 5. **Delete Password**:
-   - To delete a password, click on the "Delete" button next to the password.
+## Contributing
 
-### 6. **Logout**:
-   - Click "Logout" in the sidebar to securely log out of your account.
-### 7. **Settings**:
- - This page heps to update, delete and perform changes to the user account.
-![image](https://github.com/user-attachments/assets/03b8d643-2360-43ce-a3ba-2c061858edc8)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Security Considerations
+## License
 
-- Passwords are stored securely in the database, but it's recommended to apply additional measures like password hashing (using `password_hash()` and `password_verify()` functions in PHP) for better security.
-- You can implement encryption for passwords before storing them in the database to enhance security.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Future Enhancements
+## Acknowledgments
 
-- Implement password encryption before storing them in the database.
-- Add password strength indicators and validation rules.
-- Provide multi-factor authentication (MFA) for increased security.
-- Add the ability to categorize passwords for easier organization.
-- Integrate more web scraping features to fetch and display favicon images for websites.
+- [Bootstrap](https://getbootstrap.com/) - Frontend framework
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [Google Favicon Service](https://www.google.com/s2/favicons) - Website favicons
 
+## Support
 
-## Contact
+For support, please open an issue in the GitHub repository or contact the maintainers at:
+- Email: support@passwordmanager.com
+- Twitter: [@PasswordManager](https://twitter.com/passwordmanager)
 
-If you have any questions or suggestions, feel free to reach out:
+## Roadmap
 
-- **Email**: [richardolummanuel51@gmail.com](mailto:richardolummanuel51@gmail.com)
-- **GitHub**: [[https://github.com/your-username](https://github.com/your-username)](https://github.com/Olu-Richard/Password_Manager/tree/main)
-
----
-
-Thank you for using Password Manager! Feel free to contribute and improve the project.
+- [ ] Implement two-factor authentication
+- [ ] Add biometric authentication support
+- [ ] Create mobile applications
+- [ ] Add password strength meter
+- [ ] Implement password sharing
+- [ ] Add secure notes feature
+- [ ] Create backup/restore functionality
