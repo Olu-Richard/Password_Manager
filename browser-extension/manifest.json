@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Password Manager Extension",
+  "version": "1.0",
+  "description": "Auto-fill passwords from your password manager",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "*://*.irishnews.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.irishnews.com/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "icons/*"
+  ]
+} 
