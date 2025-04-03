@@ -102,21 +102,26 @@ A secure, modern, and user-friendly web-based password manager built with PHP an
 password-manager/
 ├── api/                 # API endpoints
 ├── config/             # Configuration files
-├── database/           # Database scripts
-├── includes/           # PHP includes
+├── database/            # Database scripts
+├── Browser extension/  # browser extension folder         
+├── includes/
+│   ├── auth.php
+│   ├── footer.php
+│   ├── header.php           # PHP includes
 │   └── db.php         # Database connection
 ├── public/             # Public files
 │   ├── add_password.php
 │   ├── dashboard.php
 │   ├── edit_password.php
-│   ├── login.php
+│   ├── logout.php
 │   ├── register.php
+│   ├── index.php
+│   ├── delete_password.php
+│   ├── add credentials.html
 │   └── settings.php
 ├── assets/             # Static assets
 │   ├── css/
-│   ├── js/
-│   └── img/
-├── screenshots/        # Screenshots directory (add your images here)
+│   └── js/
 └── README.md          # This file
 ```
 
